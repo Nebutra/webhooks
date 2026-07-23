@@ -1,0 +1,73 @@
+{
+  "name": "@nebutra/webhooks",
+  "version": "0.1.2",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "status": "stable",
+    "productionReady": true,
+    "requires": [
+      "SVIX_API_TOKEN (managed)",
+      "or WEBHOOK_SIGNING_SECRET for custom self-hosted delivery"
+    ],
+    "gaps": []
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./svix": {
+      "types": "./dist/providers/svix.d.ts",
+      "import": "./dist/providers/svix.js"
+    },
+    "./custom": {
+      "types": "./dist/providers/custom.d.ts",
+      "import": "./dist/providers/custom.js"
+    },
+    "./signing": {
+      "types": "./dist/signing.d.ts",
+      "import": "./dist/signing.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/logger": "^0.1.1",
+    "p-queue": "^9.3.0",
+    "svix": "^1.42.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.4"
+  },
+  "homepage": "https://github.com/Nebutra/webhooks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/webhooks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/webhooks/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "nebutraMirror": {
+    "sourceRepository": "Nebutra/Nebutra-Sailor",
+    "sourceDirectory": "packages/integrations/webhooks",
+    "sourcePackage": "@nebutra/webhooks",
+    "sourceSha": "325d10b1e9fe35a6945cc0d01c33dbd04566bca3",
+    "canonicalSource": "monorepo"
+  }
+}
